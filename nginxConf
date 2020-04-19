@@ -1,0 +1,20 @@
+upstream nnnnnnnn{
+        server 10.111.211.2222:8080;
+        server 10.111.211.2222:8081;
+}
+    
+server {
+        listen       9003;
+        server_name  localhost;
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+
+        location / {
+            proxy_pass http://nnnnnnnn/;
+           # root   html;
+           # index  index.html index.htm;
+        }
+}
